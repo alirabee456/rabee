@@ -77,7 +77,6 @@ fig4.show()
 
 
 d5=data['Profit'].groupby(data['Date']).sum().reset_index()
-d5
 
 
 
@@ -142,7 +141,7 @@ from dash import Dash, html, dcc
 
 import dash_bootstrap_components as dbc
 app=Dash(__name__)
-
+server=app.server
 app.layout=html.Div([
            html.H1("SalesDashboard",style={'text-align':'center'}),
            dbc.Card(dbc.CardBody([html.H4('sum of sales',className='card-title',style={'fontsize':'24px'}),
@@ -193,6 +192,6 @@ app.layout=html.Div([
 )
 
 if __name__=='__main__':
-    app.run(port=8050)
+    app.run(debug=False)
 
 
